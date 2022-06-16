@@ -1,9 +1,12 @@
+#![allow(unused_imports)]
+// use regex::Regex;
 use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
 
 use super::super::images::{
     fractal::fractal,
+    mandelbrot::mandelbrot,
     // fractal::saludo,
     // mandelbrot::saludo,
 };
@@ -43,11 +46,21 @@ pub fn cli_quick() {
 
     // You can check the value provided by positional arguments, or option arguments
     if let Some(name) = cli.name.as_deref() {
-        println!("Value for name: {}", name);
-        // assert_eq!(name, "alice");
-        let nom = format!("{}", name);
+        // // (?i)\.(jpg|png)$
+        // let re = Regex::new(r"(?i)\.(jpg|png)$").unwrap();
+        // let caps = re.captures(name).unwrap();
+        if  name.ends_with( ".jpg" ) || name.ends_with( ".png" ) {
+            // println!("{}", name);
+            // fractal(&name)
+            mandelbrot(&name);
+        }
+        else {
+            let nom =   name.to_owned() + ".png" ;
+            // fractal(&nom.as_str());
+            mandelbrot(&nom.as_str())
+        }
 
-        fractal(nom);
+        // fractal();
     }
 
     if let Some(config_path) = cli.out.as_deref() {
