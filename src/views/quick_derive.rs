@@ -2,6 +2,12 @@ use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
 
+use super::super::images::{
+    fractal::fractal,
+    // fractal::saludo,
+    // mandelbrot::saludo,
+};
+
 #[derive(Parser)]
 #[clap(author, version, about, long_about = None)]
 struct Cli {
@@ -38,6 +44,10 @@ pub fn cli_quick() {
     // You can check the value provided by positional arguments, or option arguments
     if let Some(name) = cli.name.as_deref() {
         println!("Value for name: {}", name);
+        // assert_eq!(name, "alice");
+        let nom = format!("{}", name);
+
+        fractal(nom);
     }
 
     if let Some(config_path) = cli.out.as_deref() {

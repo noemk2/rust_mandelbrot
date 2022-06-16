@@ -1,4 +1,4 @@
-pub fn fractal(outfile: &str) {
+pub fn fractal(outfile: String) {
     let width = 800;
     let height = 800;
 
@@ -29,4 +29,8 @@ pub fn fractal(outfile: &str) {
         *pixel = image::Rgb([red, green, blue]);
     }
     imgbuf.save(outfile.to_string()).unwrap();
+}
+
+pub fn saludo(salduro: &str) {
+    println!();
 }
