@@ -8,6 +8,7 @@ pub fn mandelbrot(outfile: &str) {
     let y_m_max = 1.2;
 
     let step = 0.003;
+    let iter_max = 30;
 
     let width = get_range(y_m_min, y_m_max, step);
     let height = get_range(x_m_min, x_m_max, step);
@@ -18,7 +19,7 @@ pub fn mandelbrot(outfile: &str) {
     let black = image::Rgba([0, 0, 0, 255]);
     // let new_color =
     // 5 is max_iteration
-    let colours = rainbow(5);
+    let colours = rainbow(iter_max);
 
     // let scale_x = 3.0 / width as f32;
     // let scale_y = 3.0 / height as f32;
@@ -27,10 +28,10 @@ pub fn mandelbrot(outfile: &str) {
         let depth = mandelbrot_fn(
             transpose_coordinate(x, x_m_min, step),
             transpose_coordinate(y, y_m_min, step),
-            5,
+            iter_max,
         );
         //set the image colour according to depth.
-        *pixel = if depth < 5 {
+        *pixel = if depth < iter_max {
             colours[depth as usize]
         } else {
             black
