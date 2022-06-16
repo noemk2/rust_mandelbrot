@@ -1,11 +1,11 @@
-#![allow(unused_imports)]
+// #![allow(unused_imports)]
 // use regex::Regex;
 use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
 
 use super::super::images::{
-    fractal::fractal,
+    // fractal::fractal,
     mandelbrot::mandelbrot,
     // fractal::saludo,
     // mandelbrot::saludo,

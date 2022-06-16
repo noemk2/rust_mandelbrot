@@ -1,5 +1,5 @@
 // #![allow(unused_imports)]
-#![allow(unused_imports)]
+// #![allow(unused_imports)]
 
 use rust_mandelbrot::views::{
     // select 1 views
