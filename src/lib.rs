@@ -4,6 +4,6 @@ pub mod views {
 }
 
 pub mod images {
-    pub mod mandelbrot;
     pub mod fractal;
+    pub mod mandelbrot;
 }

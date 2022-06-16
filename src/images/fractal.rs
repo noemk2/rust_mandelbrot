@@ -25,7 +25,6 @@ pub fn fractal(outfile: &str) {
             z = z * z + c;
             green += 1;
         }
-
         // Actually set the pixel. red, green, and blue are u8 values!
         *pixel = image::Rgb([red, green, blue]);
     }
