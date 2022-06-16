@@ -10,8 +10,9 @@ struct Cli {
     name: Option<String>,
 
     /// Sets a custom config file
-    #[clap(short, long, value_parser, value_name = "FILE")]
-    config: Option<PathBuf>,
+    #[clap(short, long, value_parser, value_name = "mandelbrot.png")]
+    // config: Option<PathBuf>,
+    out: Option<PathBuf>,
 
     /// Turn debugging information on
     #[clap(short, long, action = clap::ArgAction::Count)]
@@ -39,8 +40,8 @@ pub fn cli_quick() {
         println!("Value for name: {}", name);
     }
 
-    if let Some(config_path) = cli.config.as_deref() {
-        println!("Value for config: {}", config_path.display());
+    if let Some(config_path) = cli.out.as_deref() {
+        println!("Value for output: {}", config_path.display());
     }
 
     // You can see how many times a particular flag or argument occurred
