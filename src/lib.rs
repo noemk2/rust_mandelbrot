@@ -1,6 +1,8 @@
 pub mod views {
-    // pub mod cli_default;
-    pub mod cli_positional;
+    pub mod default;
+    pub mod positional;
+    pub mod quick_derive;
+    pub mod settings_parser;
 }
 
 pub mod images {
