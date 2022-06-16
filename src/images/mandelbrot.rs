@@ -1,6 +1,4 @@
 pub fn mandelbrot(outfile: &str) {
-    // let width = 800;
-    // let height = 800;
     let x_m_min = -2.0;
     let y_m_min = -1.2;
 
