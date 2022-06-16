@@ -1,19 +1,7 @@
 // #![allow(unused_imports)]
-// use regex::Regex;
 use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
-
-// use super::super::images::{
-// fractal::fractal,
-// mandelbrot::mandelbrot,
-// fractal::saludo,
-// mandelbrot::saludo,
-// };
-
-// use crate::controller::control::controller_fn;
-
-// use super::super::controller::control;
 
 #[derive(Parser)]
 #[clap(author, version, about, long_about = None)]
@@ -48,9 +36,7 @@ pub enum Commands {
 pub fn cli_quick() -> Cli {
     let cli = Cli::parse();
     return cli;
-
 }
-
 
 // pub fn cli_quick() {
 //     let cli = Cli::parse();
