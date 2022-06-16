@@ -1,11 +1,22 @@
-
 pub fn mandelbrot(outfile: &str) {
-    let width = 800;
-    let height = 800;
+    // let width = 800;
+    // let height = 800;
+    let x_m_min = -2.0;
+    let y_m_min = -1.2;
+
+    let x_m_max = 1.0;
+    let y_m_max = 1.2;
+
+    let step = 0.003;
+
+    let width = get_range(y_m_min, y_m_max, step);
+    let height = get_range(x_m_min, x_m_max, step);
 
     // let mut imgbuf = image::ImageBuffer::new(width, height);
     let mut img = image::RgbaImage::new(width, height);
+    // let black =  Rgba([0, 0, 0, 255]);
     let black = image::Rgba([0, 0, 0, 255]);
+    // let new_color =
     // 5 is max_iteration
     let colours = rainbow(5);
 
@@ -31,15 +42,15 @@ pub fn mandelbrot(outfile: &str) {
     img.save(outfile.to_string()).unwrap();
 }
 
-fn rainbow(c: u32) -> Vec<Rgba> {
+fn rainbow(c: u32) -> Vec<image::Rgba<u8>> {
     (0..c)
-        .map(|i| Rgba {
-            data: [
+        .map(|i| {
+            image::Rgba([
                 sin_to_dec(c, i, 0.0 * std::f64::consts::PI * 2.0 / 3.0),
                 sin_to_dec(c, i, 2.0 * std::f64::consts::PI * 2.0 / 3.0),
                 sin_to_dec(c, i, 1.0 * std::f64::consts::PI * 2.0 / 3.0),
                 255,
-            ],
+            ])
         })
         .collect()
 }
