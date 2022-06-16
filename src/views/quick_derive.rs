@@ -55,9 +55,7 @@ pub fn cli_quick() {
             mandelbrot(&name);
         }
         else {
-            let nom =   name.to_owned() + ".png" ;
-            // fractal(&nom.as_str());
-            mandelbrot(&nom.as_str())
+            mandelbrot(&vec![name, ".png"].concat());
         }
 
         // fractal();
