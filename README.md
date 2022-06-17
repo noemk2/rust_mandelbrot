@@ -29,3 +29,26 @@ cp ./target/release/rust_mandelbrot .
 ```sh
 ./rust_mandelbrot <NAME_FILE> OR <NAME_FILE.png>
 ```
+
+## Maps
+```
+.
+|-- Cargo.lock
+|-- Cargo.toml
+|-- mandelbroat.png
+|-- run
+|-- rust_mandelbrot
+`-- src
+    |-- controller
+    |   `-- control.rs
+    |-- images
+    |   |-- fractal.rs
+    |   `-- mandelbrot.rs
+    |-- lib.rs
+    |-- main.rs
+    `-- views
+        |-- default.rs
+        |-- positional.rs
+        |-- quick_derive.rs
+        `-- settings_parser.rs
+```
